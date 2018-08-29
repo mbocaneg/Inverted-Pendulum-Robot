@@ -183,9 +183,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 	UNUSED(htim);
 
-	//stop interrupts
-	HAL_TIM_Base_Stop_IT(&htim2);
-
 	//update IMU, and calculate pitch/roll angles
 	mpu6050_update(&mpu6050);
 	//mpu6050_calc_pitch_roll(&mpu6050, &pitch, &roll);
@@ -249,7 +246,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 	/*******************************************************************/
 
-	HAL_TIM_Base_Start_IT(&htim2);
 }
 
 /* USER CODE END 0 */
