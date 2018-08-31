@@ -19,7 +19,7 @@ what direction the motors are to be spun to.
 * MPU6050 IMU
 * L298N H-Bridge
 * 2X 6-12V DC Motor(Geared)
-* Acrylic
+* Acrylic sheet
 * FTDI USB-UART (optional, for debugging)
 * 12V AA battery holder
 * LOTS of wire & double-sided tape
