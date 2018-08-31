@@ -179,6 +179,10 @@ Mpu6050 mpu6050;
 //floats for holding pitch/roll angles
 float pitch, roll;
 
+/*
+Interrupt Service Routine that reads IMU measurements, and updates
+a PID loop at a rate of 50Hz. Controlled by TIMER2.
+*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 	UNUSED(htim);
@@ -231,6 +235,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 	/******************** SET MOTOR PWM & DIRECTION *********************/
 
+	//Set H-Bridge direction
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1,
 			(error > 0.0) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2,
@@ -241,6 +246,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4,
 			(error > 0.0) ? GPIO_PIN_RESET : GPIO_PIN_SET);
 
+	//update PWM to H-Bridge. PWM controlled by TIMER1
 	htim1.Instance->CCR1 = out_pwm;
 	htim1.Instance->CCR4 = out_pwm;
 
