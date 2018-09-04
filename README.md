@@ -18,6 +18,7 @@ what direction the motors are to be spun to.
 * STM32F103C8 MCU (STM32 Blue Pill Board in this case)
 * MPU6050 IMU
 * L298N H-Bridge
+* LD1117V33 3.3V Regulator
 * 2X 6-12V DC Motor(Geared)
 * Acrylic sheet
 * FTDI USB-UART (optional, for debugging)
