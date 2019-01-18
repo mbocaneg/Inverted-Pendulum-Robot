@@ -192,15 +192,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	//mpu6050_calc_pitch_roll(&mpu6050, &pitch, &roll);
 	mpu6050_calc_pitch(&mpu6050, &pitch);
 
-	//flush string buffer, and then write pitch/roll values
-	//into a debug message. Write this message to the USART
-	//so it can be viewed in a terminal emulator(115200 baud,
-	//8 bits data, 1 stop bit, no parity, no flow control)
-	flush_strbuf();
-	//sprintf(strbuf, "Pitch: %f, Roll: %f\n", pitch, roll);
-	sprintf(strbuf, "Pitch: %f\n", pitch);
-	uart_print(strbuf, strlen(strbuf));
-
 	/********************* PID CALCULATION *************************/
 
 	//calculate error
