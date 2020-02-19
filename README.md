@@ -24,3 +24,6 @@ what direction the motors are to be spun to.
 * FTDI USB-UART (optional, for debugging)
 * 12V AA battery holder
 * LOTS of wire & double-sided tape
+
+# Schematic
+![alt text](https://github.com/mbocaneg/Inverted-Pendulum-Robot/img/schematic.png)
