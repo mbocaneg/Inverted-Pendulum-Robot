@@ -26,4 +26,4 @@ what direction the motors are to be spun to.
 * LOTS of wire & double-sided tape
 
 # Schematic
-![alt text](https://github.com/mbocaneg/Inverted-Pendulum-Robot/img/schematic.png)
+![alt text](https://github.com/mbocaneg/Inverted-Pendulum-Robot/blob/master/img/schematic.png)
