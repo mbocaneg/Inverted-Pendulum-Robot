@@ -43,7 +43,7 @@ typedef struct Mpu6050_t {
 } Mpu6050;
 
 //platform independent function pointers that point to platform dependent
-//i2c and timing functions. Used to achieve platform independence.
+//i2c and timing functions. Populate these according to your platform.
 void (*I2C_Write_Reg)(uint8_t addr, uint8_t reg, uint8_t *data, uint16_t len);
 void (*I2C_Read_Reg)(uint8_t addr, uint8_t reg, uint8_t *data, uint16_t len);
 uint32_t (*Get_ms_tick)(void);
